@@ -1,0 +1,261 @@
+[
+    {
+        "id": "7123ca15c3501bd6",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "390c757da6b6bf96",
+        "type": "inject",
+        "z": "7123ca15c3501bd6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "071b14261dc33402"
+            ]
+        ]
+    },
+    {
+        "id": "071b14261dc33402",
+        "type": "ui_text",
+        "z": "7123ca15c3501bd6",
+        "group": "aab32bb8585542d2",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "un texto cualquiera",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 430,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "13273fdfe0bf1d9c",
+        "type": "inject",
+        "z": "7123ca15c3501bd6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Nivel de agua",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 180,
+        "y": 180,
+        "wires": [
+            [
+                "769344d0579c61b3",
+                "e47891f69789e51b",
+                "e82259b5c6daf854"
+            ]
+        ]
+    },
+    {
+        "id": "769344d0579c61b3",
+        "type": "ui_gauge",
+        "z": "7123ca15c3501bd6",
+        "name": "",
+        "group": "5100ee97cda36f7e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "{{msg.topic}}",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 390,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e47891f69789e51b",
+        "type": "ui_chart",
+        "z": "7123ca15c3501bd6",
+        "name": "",
+        "group": "5100ee97cda36f7e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "{{msg.topic}}",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "10",
+        "removeOlder": "100",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 410,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b9ab8369a5297406",
+        "type": "inject",
+        "z": "7123ca15c3501bd6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Nivel de agua",
+        "payload": "5",
+        "payloadType": "num",
+        "x": 180,
+        "y": 240,
+        "wires": [
+            [
+                "769344d0579c61b3",
+                "e47891f69789e51b"
+            ]
+        ]
+    },
+    {
+        "id": "48c409fcfc2d3321",
+        "type": "inject",
+        "z": "7123ca15c3501bd6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "NIvel de agua",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "769344d0579c61b3",
+                "e47891f69789e51b"
+            ]
+        ]
+    },
+    {
+        "id": "e82259b5c6daf854",
+        "type": "debug",
+        "z": "7123ca15c3501bd6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "aab32bb8585542d2",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "d0fdfdbef888402d",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "5100ee97cda36f7e",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "d0fdfdbef888402d",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "d0fdfdbef888402d",
+        "type": "ui_tab",
+        "name": "FLOW 3",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
